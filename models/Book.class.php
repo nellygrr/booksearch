@@ -10,58 +10,46 @@ class Book
 	private $editorial;
 	private $isbn;
 	private $price;
-
 	private $db;
-	private $books;
-
 	public function __construct($db)
 	{
-		$this->db=$db;
+		$this->db = $db;
 	}
-
 	public function getId()
 	{
-		return $this->$db;
+		return $this->id;
 	}
-
 	public function getName()
 	{
-		return $this->$db;
+		return $this->name;
 	}
-
 	public function getAuthor()
 	{
-		return $this->$db;
+		return $this->author;
 	}
-
 	public function getCountry()
 	{
-		return $this->$db;
+		return $this->country;
 	}
-
 	public function getGender()
 	{
-		return $this->$db;
+		return $this->gender;
 	}
-
 	public function getYear()
 	{
-		return $this->$db;
+		return $this->year;
 	}
-
 	public function getEditorial()
 	{
-		return $this->$db;
+		return $this->editorial;
 	}
-
 	public function getIsbn()
 	{
-		return $this->$db;
+		return $this->isbn;
 	}
-
 	public function getPrice()
 	{
-		return $this->$db;
+		return $this->price;
 	}
 }
 ?>
