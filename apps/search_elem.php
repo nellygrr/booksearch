@@ -6,7 +6,7 @@ if (isset($_GET['name'], $_GET['author']))
 	foreach ($list AS $book)
 	{
 		require('views/search_elem.phtml');
+		var_dump($_GET)
 	}
-	var_dump($_GET);
 }
 ?>
