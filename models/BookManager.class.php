@@ -8,7 +8,7 @@ class BookManager
 		$this->db = $db;
 	}
 
-	public function search($name, $author)
+	public function search($name, $author, $country, $gender, $year, $editorial, $isbn, $price)
 	{
 		$request = "SELECT * FROM books WHERE ";
 		if ($name != "")
@@ -20,6 +20,36 @@ class BookManager
 		{
 			$author = mysqli_real_escape_string($this->db, $author);
 			$request .= " author LIKE '%".$author."%' ";
+		}
+		if ($author != "")
+		{
+			$country = mysqli_real_escape_string($this->db, $country);
+			$request .= " country LIKE '%".$country."%' ";
+		}
+		if ($author != "")
+		{
+			$gender = mysqli_real_escape_string($this->db, $gender);
+			$request .= " gender LIKE '%".$gender."%' ";
+		}
+		if ($author != "")
+		{
+			$year = mysqli_real_escape_string($this->db, $year);
+			$request .= " year LIKE '%".$year."%' ";
+		}
+		if ($author != "")
+		{
+			$editorial = mysqli_real_escape_string($this->db, $editorial);
+			$request .= " editorial LIKE '%".$editorial."%' ";
+		}
+		if ($author != "")
+		{
+			$isbn = mysqli_real_escape_string($this->db, $isbn);
+			$request .= " isbn LIKE '%".$isbn."%' ";
+		}
+		if ($author != "")
+		{
+			$price = mysqli_real_escape_string($this->db, $price);
+			$request .= " price LIKE '%".$price."%' ";
 		}
 		$request .= " ORDER BY name DESC";
 		$list = [];
