@@ -1,4 +1,15 @@
+
 <?php
+$manager = new BookManager($db);
+$list = $manager->findAll();
+foreach ($list AS $book)
+{
+	require('views/search_elem.phtml');
+}
+?>
+<!-- 
+
+<//?php
 $manager = new BookManager($db);
 if (isset($_GET['name'], $_GET['author']))
 {
@@ -9,4 +20,4 @@ if (isset($_GET['name'], $_GET['author']))
 		var_dump($_GET)
 	}
 }
-?>
+?> -->

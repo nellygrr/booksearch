@@ -5,30 +5,12 @@
 		<input type="text" class="search-input" name="name" id="search_input" placeholder="titre du livre" />
 		<input type="text" class="search-input" name="author" id="search_input" placeholder="auteur" />
 		<input type="text" class="search-input" name="country" id="search_input" placeholder="pays" />
-		<select type="text" class="search-input" name="gender" id="search_input" placeholder="genre" />
-			<option value="">Choisissez un genre</option>
-			<option value="apologue">apologue</option>
-			<option value="aventures">aventures</option>
-			<option value="bande dessinee">bande dessinee</option>
-			<option value="biographie">biographie</option>
-			<option value="conte">conte</option>
-			<option value="epopee">epopee</option>
-			<option value="essai">essai</option>
-			<option value="fantastique">fantastique</option>
-			<option value="fantasy">fantasy</option>
-			<option value="horreur">horreur</option>
-			<option value="lettre">lettre</option>
-			<option value="nouvelle">nouvelle</option>
-			<option value="pamphlet">pamphlet</option>
-			<option value="parodie">parodie</option>
-			<option value="policier">policier</option>
-			<option value="portrait">portrait</option>
-			<option value="roman">roman</option>
-			<option value="science-fiction">science-fiction</option>
-			<option value="sermon">sermon</option>
-			<option value="temoignage">temoignage</option>
-			<option value="theatre">theatre</option>
-		</select>
+		<select name="gender" class="search-input">
+						<option value="">Selectionner un genre</option>
+						<?php foreach ($genders AS $gender) : ?>
+							<option><?=$gender?></option>
+						<?php endforeach; ?>
+					</select>
 		<p class="numbers" ><span>Publication:</span> de</p>
 		<input type="number" class="search-input-numbers" name="year1" id="search_input" placeholder="année" />
 		<p class="numbers">à</p>
@@ -43,4 +25,5 @@
 		<input type="submit" class="search-button" value="Rechercher">
 	</form>
 
+<?php require('apps/search_elem.php'); ?>
 </div>
