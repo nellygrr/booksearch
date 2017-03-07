@@ -2,7 +2,21 @@
 <h2>Je recherche</h2>
 <form method="GET">
 		<input type="hidden" value="search" name="page">
-		<input type="text" class="search-input" name="search" id="search_input" placeholder="Que recherchez-vous ?" value="un titre, un auteur, un pays..."/>
+		<input type="text" class="search-input" name="name" id="search_input" placeholder="titre du livre" />
+		<input type="text" class="search-input" name="author" id="search_input" placeholder="auteur" />
+		<input type="text" class="search-input" name="country" id="search_input" placeholder="pays" />
+		<input type="select" class="search-input" name="gender" id="search_input" placeholder="genre" />
+		<p class="numbers" ><span>Publication:</span> de</p>
+		<input type="number" class="search-input-numbers" name="year1" id="search_input" placeholder="année" />
+		<p class="numbers">à</p>
+		<input type="number" class="search-input-numbers" name="year2" id="search_input" placeholder="année" />
+		<input type="text" class="search-input" name="editorial" id="search_input" placeholder="editorial" />
+		<input type="text" class="search-input" name="isbn" id="search_input" placeholder="ISBN" />
+		<p class="numbers" ><span>Prix:</span> de</p>
+		<input type="number" class="search-input-numbers" name="price1" id="search_input" placeholder="prix min" />
+		<p class="numbers">€ à</p>
+		<input type="number" class="search-input-numbers" name="price2" id="search_input" placeholder="prix max" />
+		<p class="numbers">€</p>
 		<input type="submit" class="search-button" value="Rechercher">
 	</form>
 
