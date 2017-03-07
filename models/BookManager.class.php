@@ -10,48 +10,58 @@ class BookManager
 
 	public function search($name, $author, $country, $gender, $year1, $year2, $editorial, $isbn, $price1, $price2)
 	{
-		$request = "SELECT * FROM books WHERE ";
+		$request = "SELECT * FROM books WHERE 1 ";
 		if ($name != "")
 		{
 			$name = mysqli_real_escape_string($this->db, $name);
-			$request .= " name LIKE '%".$name."%' ";
+			$request .= "AND name LIKE '%".$name."%' ";
 		}
 		if ($author != "")
 		{
 			$author = mysqli_real_escape_string($this->db, $author);
-			$request .= " author LIKE '%".$author."%' ";
+			$request .= "AND author LIKE '%".$author."%' ";
 		}
-		if ($author != "")
+		if ($country != "")
 		{
 			$country = mysqli_real_escape_string($this->db, $country);
-			$request .= " country LIKE '%".$country."%' ";
+			$request .= "AND country LIKE '%".$country."%' ";
 		}
-		if ($author != "")
+		if ($gender != "")
 		{
 			$gender = mysqli_real_escape_string($this->db, $gender);
-			$request .= " gender LIKE '%".$gender."%' ";
+			$request .= "AND gender LIKE '%".$gender."%' ";
 		}
-		if ($author != "")
+		if ($year1 != "")
 		{
-			$year = mysqli_real_escape_string($this->db, $year);
-			$request .= " year LIKE '%".$year."%' ";
+			$year1 = intval($year1);
+			$request .= "AND YEAR (year) >= '".$year1."'";
 		}
-		if ($author != "")
+		if ($year2!= "")
+		{
+			$year2 = intval($year2);
+			$request .= "AND YEAR (year) <= '".$year2."'";
+		}
+		if ($editorial != "")
 		{
 			$editorial = mysqli_real_escape_string($this->db, $editorial);
-			$request .= " editorial LIKE '%".$editorial."%' ";
+			$request .= "AND editorial LIKE '%".$editorial."%' ";
 		}
-		if ($author != "")
+		if ($isbn != "")
 		{
 			$isbn = mysqli_real_escape_string($this->db, $isbn);
-			$request .= " isbn LIKE '%".$isbn."%' ";
+			$request .= "AND isbn LIKE '%".$isbn."%' ";
 		}
-		if ($author != "")
+		if ($price1!= "")
 		{
-			$price = mysqli_real_escape_string($this->db, $price);
-			$request .= " price LIKE '%".$price."%' ";
+			$price1 = intval($price1);
+			$request .= "AND price >= '".$price1."'";
 		}
-		$request .= " ORDER BY name DESC";
+		if ($price2!= "")
+		{
+			$price2 = intval($price2);
+			$request .= "AND price <= '".$price2."'";
+		}
+		$request .= " ORDER BY name DESC LIMIT 10";
 		$list = [];
 		$res = mysqli_query($this->db, $request);
 		while ($book = mysqli_fetch_object($res, "Book", [$this->db]))
