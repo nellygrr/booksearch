@@ -8,7 +8,7 @@ class BookManager
 		$this->db = $db;
 	}
 
-	public function search($name, $author, $country, $gender, $year, $editorial, $isbn, $price)
+	public function search($name, $author, $country, $gender, $year1, $year2, $editorial, $isbn, $price1, $price2)
 	{
 		$request = "SELECT * FROM books WHERE ";
 		if ($name != "")
