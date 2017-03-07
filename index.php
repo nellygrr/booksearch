@@ -1,35 +1,15 @@
-<?php
-// var_dump($_POST);
-$errors = [];
-// try
-// {
-// 	throw new Exception("Mon message d'erreur YOLO \o/");
-// }
-// catch(Exception $exception)
-// {
-// 	$errors[] = $exception->getMessage();
-// }
-$db = mysqli_connect("192.168.1.95", "recherche", "recherche", "recherche");
-session_start();// http://php.net/manual/fr/function.session-start.php
-$access = ["errors","search"];
-$page = "search";
-if (isset($_GET['page']) && in_array($_GET['page'], $access)) // http://php.net/manual/fr/function.in-array.php
-{
-    $page = $_GET['page'];
-}
 
-// http://php.net/manual/fr/function.autoload.php
+<?php
+$errors = [];
+$db = mysqli_connect("192.168.1.95","recherche","recherche","recherche");
+session_start();
+$page = "search";
 function __autoload($classname)
 {
 	require('models/'.$classname.'.class.php');
 }
-
-// $access_traitement = ["login"=>"users"]; // comments
-
-// if (isset($_GET['page'], $access_traitement[$_GET['page']]))
-// {
-// 	$traitement = $access_traitement[$_GET['page']];
-// 	require('apps/traitement_'.$traitement.'.php');
-// }
-require('apps/skel.php');
+if (isset($_GET['ajax']))
+	require('apps/search_elem.php');
+else
+	require('apps/skel.php');
 ?>

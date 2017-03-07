@@ -1,5 +1,5 @@
-<?
-class Search
+<?php
+class Book
 {
 	private $id;
 	private $name;
