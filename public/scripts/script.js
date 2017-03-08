@@ -13,5 +13,7 @@ $(document).ready(function()
 		var price1 = encodeURIComponent($('#price1').val());
 		var price2 = encodeURIComponent($('#price2').val());
 		$('#resultats').load("index.php?page=search_elem&ajax&name="+name+"&isbn="+isbn+"&author="+author+"&country="+country+"&gender="+gender+"&year1="+year1+"&year2="+year2+"&editorial="+editorial+"&price1="+price1+"&price2="+price2);
+		history.pushState({}, "Recherche", "index.php?page=search&name="+name+"&isbn="+isbn+"&price1="+price1+"&price2="+price2+"&year1="+year1+
+			"&year2="+year2+"&gender="+gender+"&author="+author+"&country="+country+"&editorial="+editorial);
 	});
 });
