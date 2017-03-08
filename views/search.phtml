@@ -2,25 +2,25 @@
 <h1>Je recherche</h1>
 <form method="GET">
 		<input type="hidden" value="search" name="page">
-		<input type="text" class="search-input" name="name" id="search_input" placeholder="titre du livre" />
-		<input type="text" class="search-input" name="author" id="search_input" placeholder="auteur" />
-		<input type="text" class="search-input" name="country" id="search_input" placeholder="pays" />
-		<select name="gender" class="search-input">
+		<input type="text" class="search-input" name="name" id="name" placeholder="titre du livre" />
+		<input type="text" class="search-input" name="author" id="author" placeholder="auteur" />
+		<input type="text" class="search-input" name="country" id="country" placeholder="pays" />
+		<select name="gender" class="search-input" id="gender">
 						<option value="">Selectionner un genre</option>
 						<?php foreach ($genders AS $gender) : ?>
 							<option><?=$gender?></option>
 						<?php endforeach; ?>
 					</select>
 		<p class="numbers" ><span>Publication:</span> de</p>
-		<input type="number" class="search-input-numbers" name="year1" id="search_input" placeholder="année" />
+		<input type="number" class="search-input-numbers" name="year1" id="year1" placeholder="année" />
 		<p class="numbers">à</p>
-		<input type="number" class="search-input-numbers" name="year2" id="search_input" placeholder="année" />
-		<input type="text" class="search-input" name="editorial" id="search_input" placeholder="editorial" />
-		<input type="text" class="search-input" name="isbn" id="search_input" placeholder="ISBN" />
+		<input type="number" class="search-input-numbers" name="year2" id="year2" placeholder="année" />
+		<input type="text" class="search-input" name="editorial" id="editorial" placeholder="editorial" />
+		<input type="text" class="search-input" name="isbn" id="isbn" placeholder="ISBN" />
 		<p class="numbers" ><span>Prix:</span> de</p>
-		<input type="number" class="search-input-numbers" name="price1" id="search_input" placeholder="prix min" />
+		<input type="number" class="search-input-numbers" name="price1" id="price1" placeholder="prix min" />
 		<p class="numbers">€ à</p>
-		<input type="number" class="search-input-numbers" name="price2" id="search_input" placeholder="prix max" />
+		<input type="number" class="search-input-numbers" name="price2" id="price2" placeholder="prix max" />
 		<p class="numbers">€</p>
 		<input type="submit" class="search-button" value="Rechercher">
 	</form>
